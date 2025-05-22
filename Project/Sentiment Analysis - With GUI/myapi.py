@@ -1,14 +1,18 @@
-import requests
+from nltk.sentiment import SentimentIntensityAnalyzer
+import nlpcloud
 
-url = "https://twinword-twinword-bundle-v1.p.rapidapi.com/sentiment_analyze/"
-
-payload = { "text": "great value in its price range!" }
-headers = {
-	"x-rapidapi-key": "47ccbde18dmsh4905a8fe3502b22p12ed60jsn38c7319a4c74",
-	"x-rapidapi-host": "twinword-twinword-bundle-v1.p.rapidapi.com",
-	"Content-Type": "application/x-www-form-urlencoded"
-}
-
-response = requests.post(url, data=payload, headers=headers)
-
-print(response.json())
+class API:
+    def __init__(self):
+        pass
+    
+    def sentiment_analysis(self,text):        
+        sia = SentimentIntensityAnalyzer()
+        responce = sia.polarity_scores(text)
+        return responce
+    
+    def namedEntity_analysis(self,text,searched_text):
+        client = nlpcloud.Client("finetuned-llama-3-70b", "c1677dc6dbd8be3d3ddcec2d2e301d5947666389", gpu=True)
+        responce = client.entities(text,searched_entity=searched_text)
+        return responce
+    
+    

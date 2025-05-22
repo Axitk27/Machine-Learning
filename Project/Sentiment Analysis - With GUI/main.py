@@ -1,5 +1,6 @@
 from tkinter import *
 from mydb import Database
+from myapi import API
 from tkinter import messagebox
 
 class NLPAPP:
@@ -7,6 +8,7 @@ class NLPAPP:
         
         #Create a Database object 
         self.dbo = Database()
+        self.apio = API()
         
         #login hum add kr shakte he
         self.root = Tk()
@@ -174,7 +176,7 @@ class NLPAPP:
         self.sentiment_input.pack(pady=(5,10),ipady = 5)
         
         #add a Button
-        sentiment_button = Button(self.root,text='Analyze Sentiment',width = 15, height= 1)
+        sentiment_button = Button(self.root,text='Analyze Sentiment',width = 15, height= 1,command = self.do_sentiment_analysis)
         sentiment_button.pack(pady=(10,10))
         
         self.sentiment_result = Label(self.root,text = '',bg = '#302e30',fg = 'white')
@@ -185,14 +187,71 @@ class NLPAPP:
         goback_button = Button(self.root,text='Home Page',width = 15, height= 1,command=self.home_gui)
         goback_button.pack(pady=(10,10))
     
-         
-# axit.kakadiya@gmail.com
-        
-    
-    
-    
     def ner_gui(self):
-        pass
+        self.clear()
+        heading = Label(self.root,text='NLPApp',bg = '#302e30',fg = 'white' ) #add the text 
+        heading.pack(pady = (30,30))#apply the data on the screen also give space 30 from top and 30 from bottom
+        heading.configure(font=('verdana',24,'bold'))#changing the configuration 
+        
+        heading2 = Label(self.root,text=' Name Entity Recognition Analysis',bg = '#302e30',fg = 'white' ) #add the text 
+        heading2.pack(pady = (10,20))#apply the data on the screen also give space 30 from top and 30 from bottom
+        heading2.configure(font=('verdana',12))#changing the configuration 
+        
+        #Enter data as a text
+        label1 = Label(self.root,text='Enter the Text',bg = '#302e30',fg = 'white')
+        label1.pack(pady = (10,10))#gap is not from a top sondarn from the last element
+        
+        #Input a Sentiment data 
+        self.ner_input = Entry(self.root,width = 50)
+        self.ner_input.pack(pady=(5,10),ipady = 5)
+        
+        #Enter data as a text
+        label2 = Label(self.root,text='Enter the search Entity',bg = '#302e30',fg = 'white')
+        label2.pack(pady = (10,10))#gap is not from a top sondarn from the last element
+        
+        #Input a Sentiment data 
+        self.ner_searched_input = Entry(self.root,width = 50)
+        self.ner_searched_input.pack(pady=(5,10),ipady = 5)
+        
+        #add a Button
+        ner_button = Button(self.root,text='Entity Analyze ',width = 15, height= 1,command = self.do_ner_analysis)
+        ner_button.pack(pady=(10,10))
+        
+        self.ner_result = Label(self.root,text = '',bg = '#302e30',fg = 'white')
+        self.ner_result.pack(pady=(5,10))
+        self.ner_result.configure(font=('verdana',16))#changing the configuration 
+        
+        #add a Button
+        goback_button = Button(self.root,text='Home Page',width = 15, height= 1,command=self.home_gui)
+        goback_button.pack(pady=(10,10))
+    
+        
+        
+    def do_sentiment_analysis(self):
+        text = self.sentiment_input.get()
+        responce = self.apio.sentiment_analysis(text)
+        # print(responce)
+        txt = ''
+        for item in responce:
+            txt = txt + item + '->' + str(responce[item]) +'\n'
+
+        self.sentiment_result['text'] = txt
+        
+        
+    def do_ner_analysis(self):
+        text = self.ner_input.get()
+        searched_text = self.ner_searched_input.get()
+        responce = self.apio.namedEntity_analysis(text,searched_text)
+        print(responce)
+        
+        # txt = ''
+        
+        # for item in responce:
+        #     txt = txt + item + '->' + str(responce[item]) +'\n'
+
+        # self.sentiment_result['text'] = txt
+        
+        
     def emotion_gui(self):
         pass
             
@@ -200,3 +259,4 @@ nlp = NLPAPP()
         
         
         
+# axit.kakadiya@gmail.com
