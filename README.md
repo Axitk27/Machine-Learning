@@ -3,15 +3,12 @@ This repository, created by Axit Kakadiya, documents my Machine Learning journey
 
 I am currently following the CampusX Machine Learning course as part of this learning path, and this repository will be regularly updated with my progress, notes, and project implementations.
 
-Contents
+Contents:
 Books — Notes, summaries, and key takeaways from machine learning books.
-
 Projects — Hands-on projects covering various ML topics and techniques.
-
 Course Material — Resources and assignments from the CampusX course.
 
-Project Structure
-
+Project Structury:
 /books            # Notes and summaries from ML books
 /projects         # Machine learning projects with datasets and code
 /course           # CampusX course materials and assignments
