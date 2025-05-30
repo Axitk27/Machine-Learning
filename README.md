@@ -10,23 +10,6 @@ Projects — Hands-on projects covering various ML topics and techniques.
 
 Course Material — Resources and assignments from the CampusX course.
 
-Getting Started
-To explore the projects and run the code locally, follow these steps:
-
-Clone this repository:
-git clone https://github.com/yourusername/your-repo-name.git
-
-Navigate into the project directory:
-cd your-repo-name
-
-(Optional) Create and activate a virtual environment:
-python3 -m venv venv
-source venv/bin/activate  # Linux/macOS  
-venv\Scripts\activate     # Windows
-
-Install the required dependencies:
-pip install -r requirements.txt
-
 Project Structure
 
 /books            # Notes and summaries from ML books
@@ -39,10 +22,10 @@ How to Contribute
 Contributions are welcome! If you'd like to add a project, improve notes, or suggest resources:
 
 Fork the repository.
-Create a new branch (git checkout -b feature/your-feature).
-Commit your changes (git commit -m 'Add some feature').
-Push to the branch (git push origin feature/your-feature).
-Open a Pull Request.
+1. Create a new branch (git checkout -b feature/your-feature).
+2. Commit your changes (git commit -m 'Add some feature').
+3. Push to the branch (git push origin feature/your-feature).
+4. Open a Pull Request.
 
 Contact
 Feel free to reach out to me at:
