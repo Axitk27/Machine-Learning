@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NER</title>
+        
+
+    </head>
+    <body>
+        <form action = '/perform_ner' method = "post">
+            <label>Type your text here</lebel><br>
+            <textarea name = "ner_text"> </textarea><br>
+            <input type = "submit" value = "Perform NER">
+        </form>
+        {%if ans%}
+            <p> {{ans}} </p>
+        {%endif%}
+    </body>
+</html>
