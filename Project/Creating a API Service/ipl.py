@@ -232,6 +232,26 @@ def bowlerAPI(bowler, balls=bowler_data):
     return json.dumps(data, cls=NpEncoder)
 
 
+def Records(data=balls):
+    runs = {}
+    wickts = {}
+    total_batsman = data['batter'].unique()
+    total_bowler = data['bowler'].unique()
+    for item in total_batsman:
+        runs[item] = int(data[data['batter'] == item]['batsman_run'].sum())
+
+    runs_sorted = dict(sorted(runs.items(),key = lambda x : x[1],reverse = True))
+    
+    for item in total_bowler:
+        wickts[item] = int(data[data['bowler'] == item]['isWicketDelivery'].sum())
+
+    wickts_sorted = dict(sorted(wickts.items(),key = lambda x : x[1],reverse = True))
+
+    out = {
+        'batting-record':runs_sorted,
+        'bowling-record':wickts_sorted
+    }
+    return json.dumps(out,cls = NpEncoder)
 
 
 
