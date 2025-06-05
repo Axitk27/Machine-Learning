@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>IPL Web Application</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Team vs Team</h1>
+        <form action = '/teamvteam' method = "get">
+            <label>Select Team 1</label>
+            <select name = 'team1'>
+                <p> {%for item in teams%}</p>
+                <option>{{item}}</option>
+                {% endfor %}
+                
+            </select><br><br><br>
+
+            <label>Select Team 2</label>
+            <select name = 'team2'>
+                <p> {%for item in teams%}</p>
+                <option>{{item}}</option>
+                {% endfor %}
+                
+            </select><br><br><br>
+
+            <input type = "submit" value = "Find Track Record">
+        </form>
+        {%if result %}
+            {% for i in result%}
+            <p>{{i}}:{{result[i]}} </p>
+            {%endfor%}
+        {%endif%}
+    </body>
+</html>

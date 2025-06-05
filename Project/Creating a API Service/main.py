@@ -1,7 +1,6 @@
 from flask import Flask,jsonify,request,render_template
 import ipl
 
-max = 2
 
 app = Flask(__name__)
 
@@ -13,9 +12,21 @@ def login():
 def service():
     return render_template('service.html')
 
+@app.route('/api/teams')
+def teams():
+    teams = ipl.teamsapi()
+    return jsonify(teams)
+
 @app.route('/team-analysis')
 def team_analysis():
     return render_template('team-analysis.html')
+
+@app.route('/teamvteam')
+def team_vs_team():
+    team1 = request.args.get('team1')
+    team2 = request.args.get('team2')
+    responce = ipl.team_vs_team(team1,team2)
+    return responce
 
 
 @app.route('/api/team-record')
