@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
+st.set_page_config(layout = 'wide',page_title = 'Startup Analysis')
 st.sidebar.title('Startup Funding Analysis')
 option = st.sidebar.selectbox('Select one',['Overall Analysis','StartUp','Investor'])
-
 
 ####################################################
 #finding the unique name in the company data       
@@ -17,6 +17,7 @@ company_data = sorted(df['Startup'].unique())
 # # L.remove('1mg (Healthkartplus)')
 # # L[0] = "Byju's"
 #data cleaning not part right now but will do 
+###################################################
 ###################################################
 
 
@@ -34,7 +35,6 @@ invesror_data = df['Investors'].str.strip(" ")
 ####################################################
 def load_investor_details(investor):
     st.title(selected_investor)
-   
     #load the top 5 data of the investor 
     last5_df = df[df['Investors'].str.contains('investor')].head(5)[['Date','Startup','Vertical','City','Round','Amount']]
     st.subheader('Most Recent Investment')
