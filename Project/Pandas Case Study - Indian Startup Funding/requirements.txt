@@ -5,13 +5,13 @@ cachetools==5.5.2
 certifi==2025.4.26
 charset-normalizer==3.4.2
 click==8.2.1
-gitdb==4.0.12[2025-06-12 10:22:56.060220] 
+gitdb==4.0.12
 gitpython==3.1.44
 idna==3.10
 jinja2==3.1.6
 jsonschema==4.24.0
 jsonschema-specifications==2025.4.1
-markupsafe==3.0.2[2025-06-12 10:22:56.060501] 
+markupsafe==3.0.2
 narwhals==1.42.0
 numpy==2.3.0
 packaging==24.2
@@ -23,7 +23,7 @@ pydeck==0.9.1
 python-dateutil==2.9.0.post0
 pytz==2025.2
 referencing==0.36.2
-requests[2025-06-12 10:22:56.060840] ==2.32.4
+requests==2.32.4
 rpds-py==0.25.1
 six==1.17.0
 smmap==5.0.2
@@ -33,6 +33,6 @@ toml==0.10.2
 tornado==6.5.1
 typing-extensions==4.14.0
 tzdata==2025.2
-urllib3[2025-06-12 10:22:56.061109] ==2.4.0
+urllib3==2.4.0
 watchdog==6.0.0
 matplotlib==1.16.0
