@@ -35,4 +35,4 @@ typing-extensions==4.14.0
 tzdata==2025.2
 urllib3[2025-06-12 10:22:56.061109] ==2.4.0
 watchdog==6.0.0
-matplotlib
+matplotlib==1.16.0
