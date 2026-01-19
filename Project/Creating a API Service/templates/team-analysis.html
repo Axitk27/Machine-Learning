@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>Cricanalysis</title>
+    <style>
+            body {
+                margin: 0;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: #f4f6fa;
+                color: #333;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .form-container {
+                background: #ffffff;
+                padding: 40px 50px;
+                border-radius: 12px;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                width: 90%;
+                max-width: 600px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                color: #1e3a8a;
+                margin-bottom: 30px;
+            }
+
+            .input-row {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                margin-bottom: 25px;
+                flex-wrap: wrap;
+            }
+
+            label {
+                font-size: 1.2em;
+                color: #333;
+            }
+
+            input[type="text"] {
+                width: 250px;
+                padding: 10px 12px;
+                font-size: 1em;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+
+            input[type="text"]:focus {
+                border-color: #4a90e2;
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1em;
+                border: none;
+                border-radius: 6px;
+                background-color: #4a90e2;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            button:hover {
+                background-color: #357bd8;
+            }
+
+            p {
+                margin-top: 20px;
+                font-size: 1em;
+            }
+
+            a {
+                color: #4a90e2;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+            
+    </style>
+    </head>
+    <body>
+        <h1>Team Analysis</h1><br>
+        <form action = '/api/team-record'>
+            <p><label>Team Name</label><br></p>
+            <p><input type = "team" name = "user_ka_team"><br></p>
+            <p><input type = "submit" value = "submit"><br></p>
+            <p>to main menu<a href = "/service"> Click here</a></p>
+            <script src="" async defer></script>
+        </form>
+    </body>
+</html> 
